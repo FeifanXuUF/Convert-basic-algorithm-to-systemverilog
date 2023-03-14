@@ -1,0 +1,27 @@
+// inputs: go, in (WIDTH bits)
+// outputs: out (clog2(WIDTH+1) bits), done
+
+// reset values (add any others that you might need)
+out = 0;
+done = 0;
+
+while(1) {
+
+	// wait for go to start circuit
+	while (go == 0);
+	done = 0;
+	count = 0;
+
+	// store input in register
+	n_r = in;	
+
+	// main algorithm
+	while(n_r != 0) {
+		n_r = n_r & (n_r – 1);
+ 		count ++;
+}
+
+	// assign output and assert done
+	output = count; 
+	done = 1;
+}
